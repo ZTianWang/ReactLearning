@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="container"></div>
+    <script src="../src/react.development.js"></script>
+    <script src="../src/react-dom.development.js"></script>
+    <script src="../src/babel.min.js"></script>
+
+    <script type="text/babel">
+        // 1.创建类式组件: 必须继承React.Component,必须有render()方法
+        class MyComp extends React.Component {
+            render(){
+                return <h2>This is a class component demo!</h2>
+            }
+        }
+        // 2.渲染到页面：使用组件标签
+        ReactDOM.render(<MyComp/>,document.querySelector('#container'))
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- 
+    jsx语法规则：
+        1.定义虚拟DOM时，不要写引号
+        2.标签中混入JS表达式时要用{}!
+        3.CSS的类名指定用className
+        4.内联CSS用style={{key:value}}格式
+        5.一个虚拟DOM内只能有一个根标签！
+        6.标签必须闭合！
+        7.标签首字母：
+            (1).若小写开头则转为html中同名元素
+            (2).若大写开头，有react渲染对应组件，需先定义组件
+		8.{}中只能包含JS表达式，不可以是if{}、for{}等！！！
+			(1).遍历数组用.map((item,index)=>{ return xxx})
+ -->
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>hello jsx</title>
+	<link rel="stylesheet" href="JSX_CSS.css">
+</head>
+
+<body>
+	<div id="test"></div>
+
+
+	<!-- 引入核心库 -->
+	<script src="../src/react.development.js" type="text/javascript" charset="utf-8"></script>
+	<!-- <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script> -->
+	<!-- 引入DOM库 -->
+	<script src="../src/react-dom.development.js" type="text/javascript" charset="utf-8"></script>
+	<!-- <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script> -->
+	<!-- 引入bable -->
+	<script src="../src/babel.min.js" type="text/javascript" charset="utf-8"></script>
+	<!-- <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script> -->
+
+	<!-- 不使用jsx的方式（无需引入bable） -->
+	<!-- <script type="text/javascript">
+			const VDOM = React.createElement('h1',{id:'title1'},'hello react')
+			ReactDOM.render(VDOM,document.querySelector("#test"))
+		</script> -->
+
+	<!--使用jsx的方式 
+			此处type写bable -->
+	<script type="text/babel">
+
+		const myId = "myId"
+		const myData = "Hello React"
+		const lists = ['a','b','c','d','e']
+
+		//1.create virtual DOM (a object)
+		const VDOM = (
+			<div>
+				<h1 className='blueFont' id={myId}>
+					<span style={{ fontSize: '35px' }}>{myData.toUpperCase()}</span>
+				</h1>
+				<input type="text"></input>
+				{/*<Good></Good>*/}
+				<ul>
+					{
+						lists.map((item,index) => {
+							return <li key={index}>{item}</li>
+						})
+					}
+				</ul>
+			</div>
+		)
+		//2. render to page
+		ReactDOM.render(VDOM, document.querySelector('#test'))
+
+	</script>
+
+</body>
+
+</html>

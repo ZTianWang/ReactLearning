@@ -1,0 +1,8 @@
+APP.js:app的组件文件,必须大写开头，重要！！！
+App.css: app样式
+App.test.js:只用于做测试，很少用，可删
+index.css: 通用的样式，一般放在public/css中
+index.js：入口文件，引入依赖包及app组件，重要！！！
+logo.svg:被app.js引入的一个图片
+reportWebVitals.js: 监测记录页面性能
+setupTest.js: 做组件测试

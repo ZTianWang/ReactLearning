@@ -11,6 +11,7 @@ export default class State extends Component {
         4.state内部含有this：
             1)需通过bind(this)强制绑定
             2)使用箭头函数
+        5.更新state内的数组需先使用“深拷贝！！！”将数组赋值给另一个数组X，并操作X后讲X的值赋予state中的数组
     */
     state = {
         num: 1

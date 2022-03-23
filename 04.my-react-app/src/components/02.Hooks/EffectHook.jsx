@@ -21,7 +21,7 @@ export default function EffectHook() {
         参数为一个函数和一个数组：
             监测数据更新
             数组内为被监测的数据不写第二个参数为监测所有数据
-            若有多个监测调用多个useEffect
+            若有多个监测且执行不同函数，则调用多个useEffect
     */
     useEffect(()=>{
         // console.log('有数据更新了')

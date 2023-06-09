@@ -9,18 +9,18 @@ export default function EffectHook() {
     const [count, setCount] = useState(0)
 
     /* 
-        副作用：useEffect(()=>{...},[...])
-        参数为一个回调函数：模拟mounted，一般在这里写数据请求
+        副作用：useEffect(()=>{...},[])
+        参数为一个回调函数：一般在这里写数据请求，访问api获取数据等
+        第二个参数为一个空数组：表示不监听所有数据,模拟mounted，用于初次挂载时的操作
     */
-    // useEffect(
-    //     () => {
+    // useEffect(() => {
     //         console.log('EffectHook加载完成')
-    //     })
+    // },[])
 
     /* 
         参数为一个函数和一个数组：
-            监测数据更新
-            数组内为被监测的数据不写第二个参数为监测所有数据
+            监测数据更新didUpdate
+            数组内为被监测的数据：不写第二个参数为监测所有数据，每次渲染结束都会调用（谨慎使用，避免更新后再次调用造成死循环）
             若有多个监测且执行不同函数，则调用多个useEffect
     */
     useEffect(()=>{

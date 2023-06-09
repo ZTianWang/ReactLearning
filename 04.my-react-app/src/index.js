@@ -11,6 +11,7 @@ import App1 from './App1.jsx';
 import App2 from './App2.jsx';
 import App3 from './App3.jsx';
 import LifeCycle from './components/01.CoreAttributes/LifeCycle.jsx';
+import Test from './components/Test/Test'
 
 import './components/components.css'
 
@@ -51,6 +52,14 @@ ReactDOM.render(
 ReactDOM.render(
   <React.StrictMode>
     <App3 />
+  </React.StrictMode>,
+  document.getElementById('nested')
+)
+
+// LocalStorage
+ReactDOM.render(
+  <React.StrictMode>
+    <Test/>
   </React.StrictMode>,
   document.getElementById('nested')
 )

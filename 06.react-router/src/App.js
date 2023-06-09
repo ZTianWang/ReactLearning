@@ -61,6 +61,8 @@ function App() {
       <button onClick={() => navigate('/home')}>Go To Home</button>
       <button onClick={toHome}>Go To Home with params</button>
       <hr />
+	  
+	  {/* 通过Outlet组件展示子路由（以子组件的形式） */}
       <Outlet />
     </>
   );

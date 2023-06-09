@@ -9,23 +9,6 @@ import PropTypes from 'prop-types';
 */
 
 export default class Props extends Component {
-    
-    render() {
-        // 获取props
-        const {name,age,gender,myDefault} = this.props
-        return (
-            <div className='cb'>
-                <p className='h'>props:</p>
-                <ul>
-                    <li>name:{name}</li>
-                    <li>age:{age}</li>
-                    <li>gender:{gender}</li>
-                    <li>default:{myDefault}</li>
-                </ul>
-            </div>
-        )
-    }
-
 
     /*
         props添加限制：需引入import PropTypes from 'prop-types';
@@ -40,10 +23,25 @@ export default class Props extends Component {
 
     // 为props设置默认值,用,隔开
     static defaultProps = {
-        age : 0,
+        age: 0,
         gender: '男',
         myDefault: '默认值'
     }
 
+    render() {
+        // 获取props
+        const { name, age, gender, myDefault } = this.props
+        return (
+            <div className='cb'>
+                <p className='h'>props:</p>
+                <ul>
+                    <li>name:{name}</li>
+                    <li>age:{age}</li>
+                    <li>gender:{gender}</li>
+                    <li>default:{myDefault}</li>
+                </ul>
+            </div>
+        )
+    }
 }
 

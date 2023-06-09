@@ -5,7 +5,7 @@ import React, { memo, useCallback, useState, useMemo } from 'react'
         1.使用memo(Comp)使子组件不被渲染,参数为子组件常量
         2.memo()的缺陷：
             单独使用memo只能用于纯静态的子组件（子组件不做数据处理）
-        3.使用callback(fn,[])：fn为要回调的函数，第二个参数为监测更新的依赖项
+        3.使用useCallback(fn,[])：fn为要回调的函数，第二个参数为监测更新的依赖项
         4.使用useMemo(()=>{return fn},[]):此方式与callback相同，但第一个参数为返回一个函数的函数（高阶函数）
 */
 export default function MemoHook() {
